@@ -23,7 +23,7 @@ class Block(pygame.sprite.Sprite):
         pygame.draw.rect(self.image, color, pygame.Rect(2,2,16,16))
 
         self.rect = self.image.get_rect().move(position)
-        self.all_blocks = blocks
+        self.all_blocks = blocks # This is a bug: this is passed by copy, which means all blocks see the board at the time of creation and get no updates
         self.draw = True
 
     def move(self, x, y):
