@@ -66,7 +66,7 @@ class Block(pygame.sprite.Sprite):
         if self.rect.y > 379:
             return True
         self.rect = self.rect.move(0, 20)
-        retval = pygame.sprite.spritecollide(self, self.all_blocks, False)
+        retval = pygame.sprite.spritecollide(self, self.all_blocks, False) # This is where it becomes a problem
         self.rect = self.rect.move(0,-20)
         return retval        
 
